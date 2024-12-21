@@ -14,6 +14,9 @@ up service:
 enter service:
 	docker exec -it -u {{ if service == "ui" { "node" } else { shell('whoami') } }} {{service}} bash
 
+enter-dev service:
+	devcontainer exec --workspace-folder . --config .devcontainer/{{service}}/devcontainer.json bash
+
 start:
 	just up ui
 	just up api

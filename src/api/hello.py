@@ -1,3 +1,4 @@
+import names
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -19,4 +20,4 @@ app.add_middleware(
 
 @app.get("/dogs")
 async def dogs():
-    return {"name": "Fido"}
+    return {"name": names.get_first_name()}
