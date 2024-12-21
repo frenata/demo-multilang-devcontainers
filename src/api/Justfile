@@ -1,0 +1,2 @@
+run:
+	uv run fastapi dev hello.py --host 0.0.0.0
